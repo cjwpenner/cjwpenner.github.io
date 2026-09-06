@@ -1,0 +1,175 @@
+/* cjwpenner.github.io — no dependencies, no external requests. */
+
+:root {
+  --paper: #fbfaf8;
+  --ink: #1c1b19;
+  --muted: #6b6862;
+  --rule: #e4e0d8;
+  --accent: #0f6d63;
+  --measure: 38rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #16171a;
+    --ink: #e9e7e2;
+    --muted: #98958d;
+    --rule: #2b2d31;
+    --accent: #5fcdbf;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: clamp(2.5rem, 8vw, 5.5rem) 1.5rem 4rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  /* Optical centring: sits the column slightly above true centre. */
+  display: flex;
+  justify-content: center;
+}
+
+main { width: 100%; max-width: var(--measure); }
+
+/* ---- Masthead ---- */
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  font-weight: 640;
+}
+
+.tagline {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 1.0625rem;
+}
+
+/* ---- Sections ---- */
+
+h2 {
+  margin: 3.25rem 0 1.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.75rem;
+  font-weight: 620;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+p { margin: 0 0 1.15rem; }
+
+.lede { margin-top: 2.25rem; }
+
+/* ---- Projects ---- */
+
+.project { margin-bottom: 2rem; }
+.project:last-child { margin-bottom: 0; }
+
+.project h3 {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 620;
+  letter-spacing: -0.005em;
+}
+
+.project h3 a { color: var(--ink); }
+
+.project p { margin: 0.4rem 0 0; }
+
+.meta {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+.meta em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* ---- Links ---- */
+
+a {
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---- Contact / footer ---- */
+
+/* Flex-wrap rather than inline: the markup has no whitespace between the links
+   and the separator, so inline layout has no break opportunity and the row
+   overflows on narrow screens. Individual links still refuse to break mid-address. */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.7rem;
+}
+
+.contact a { white-space: nowrap; }
+
+.sep { color: var(--rule); }
+
+@media (max-width: 26rem) {
+  .sep { display: none; }
+}
+
+footer {
+  margin-top: 3.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* ---- Long-form pages (privacy) ---- */
+
+.doc { --measure: 42rem; }
+
+.doc h2 { margin-top: 2.75rem; }
+
+.doc ul {
+  margin: 0 0 1.15rem;
+  padding-left: 1.15rem;
+}
+
+.doc li { margin-bottom: 0.5rem; }
+
+.updated {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 2.25rem;
+  font-size: 0.875rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: text-decoration-color 120ms ease; }
+}

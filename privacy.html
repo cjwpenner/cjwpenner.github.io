@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NoteTaker — Privacy Policy</title>
+    <meta name="description" content="Privacy policy for the NoteTaker Android app: what it records, where that data goes, and what the developer can see.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f6d63'/><text x='16' y='23' font-family='system-ui,sans-serif' font-size='19' font-weight='600' fill='%23fff' text-anchor='middle'>C</text></svg>">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="doc">
+    <main>
+        <a class="back" href="index.html">← Chris Penner</a>
+
+        <header>
+            <h1>Privacy Policy</h1>
+            <p class="tagline">NoteTaker for Android</p>
+            <p class="updated">Last updated 6 September 2026</p>
+        </header>
+
+        <p class="lede">NoteTaker records meetings, transcribes and summarises them, and emails the
+            result to an address you choose. This policy explains what the app handles and where it
+            goes. The short version: the app runs entirely on your device using your own accounts,
+            and the developer operates no server and receives none of your data.</p>
+
+        <h2>Who is responsible</h2>
+
+        <p>NoteTaker is developed and published by Chris Penner, an individual developer. Questions
+            about this policy or about your data can be sent to
+            <a href="mailto:financetoolcp@gmail.com">financetoolcp@gmail.com</a>.</p>
+
+        <h2>What the app handles</h2>
+
+        <ul>
+            <li><strong>Audio recordings.</strong> Captured from your device's microphone when you
+                start a recording, or supplied by you as an MP3 file.</li>
+            <li><strong>Transcripts and summaries.</strong> Generated from that audio.</li>
+            <li><strong>Meeting titles and your "extra context" note</strong>, as you type them.</li>
+            <li><strong>Configuration you enter</strong>: your OpenRouter API key, the destination
+                email address, and your outgoing mail (SMTP) server details and password.</li>
+        </ul>
+
+        <p>The app has no user accounts and does not ask for your name, contacts, location or device
+            identifiers. It contains no analytics, advertising or crash-reporting services.</p>
+
+        <h2>Where it is stored</h2>
+
+        <p>Recordings, transcripts and notes are written to a folder on your own device that you
+            select when you first use the app. They stay there until you delete them; the app does
+            not remove them for you, and does not copy them anywhere else.</p>
+
+        <p>Your OpenRouter API key and your SMTP password are encrypted at rest using the Android
+            Keystore, the operating system's hardware-backed credential store. Once entered they are
+            never displayed back to you — the settings screen shows only whether a value is set.</p>
+
+        <h2>What is sent off your device</h2>
+
+        <p>Two things leave your phone, both initiated by the app on your behalf and both using
+            credentials you supplied.</p>
+
+        <ul>
+            <li><strong>To OpenRouter.</strong> Your recording is split into chunks and sent over an
+                encrypted HTTPS connection to <a href="https://openrouter.ai">OpenRouter</a>, which
+                routes it to the transcription and summarisation models the app is configured to
+                use. This request is authenticated with <em>your</em> API key and billed to
+                <em>your</em> OpenRouter account. Your meeting title and extra-context note are
+                included so the summary is relevant. OpenRouter's handling of this data, and that of
+                the model providers it routes to, is governed by their own privacy policy and terms,
+                not by this one. Please read them before recording anything sensitive.</li>
+            <li><strong>To your mail provider.</strong> The finished notes and transcript are emailed
+                to the address you configured, sent directly from your device through the SMTP
+                server and account you specified. The message goes from you to you.</li>
+        </ul>
+
+        <p>There is no intermediate server. The developer does not host a backend, does not proxy
+            these requests, and has no technical means of accessing your recordings, transcripts,
+            notes, credentials or email.</p>
+
+        <h2>Recording other people</h2>
+
+        <p>The app records whoever is present, and it is your responsibility to use it lawfully. In
+            many jurisdictions recording a conversation requires the knowledge or consent of the
+            other participants. Please obtain consent before recording, and be aware that meetings
+            covering medical, legal, financial or otherwise confidential matters will be transmitted
+            to a third-party AI provider as described above.</p>
+
+        <h2>Permissions the app requests</h2>
+
+        <ul>
+            <li><strong>Microphone</strong> — to record meetings. Used only while a recording is
+                running.</li>
+            <li><strong>Foreground service, including microphone</strong> — so a recording continues
+                reliably when your screen is off or you switch apps.</li>
+            <li><strong>Internet</strong> — to reach OpenRouter and your mail server.</li>
+            <li><strong>Notifications</strong> — to show that a recording is in progress and to tell
+                you when notes have been sent.</li>
+        </ul>
+
+        <h2>Children</h2>
+
+        <p>NoteTaker is a tool for working adults and is not directed at children under 13. The
+            developer does not knowingly collect data from children — and, as described above, does
+            not collect user data at all.</p>
+
+        <h2>Your control over your data</h2>
+
+        <p>Because everything is held on your own device and in your own accounts, you retain direct
+            control. You can delete recordings, transcripts and notes from the folder you chose;
+            clear your API key and mail credentials in the app's settings; delete your data at
+            OpenRouter under their policy; and uninstall the app, which removes its stored settings.
+            No request to the developer is required, and none can be actioned on your behalf.</p>
+
+        <h2>Changes</h2>
+
+        <p>If this policy changes, the revised version will be posted at this address with an updated
+            date above. Material changes affecting how your data is handled will be noted in the app's
+            release notes.</p>
+
+        <footer>
+            <p>© 2026 Chris Penner · <a href="index.html">cjwpenner.github.io</a></p>
+        </footer>
+    </main>
+</body>
+
+</html>
