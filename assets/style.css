@@ -101,6 +101,25 @@ p { margin: 0 0 1.15rem; }
   color: var(--accent);
 }
 
+/* Secondary projects: a compact list, so the page keeps a clear hierarchy
+   between the things worth reading about and the things merely worth knowing
+   exist. */
+.minor {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.minor li {
+  margin-bottom: 0.85rem;
+  padding-left: 0.95rem;
+  text-indent: -0.95rem;
+}
+
+.minor li:last-child { margin-bottom: 0; }
+
+.minor a { font-weight: 620; }
+
 /* ---- Links ---- */
 
 a {
